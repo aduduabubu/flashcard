@@ -2,8 +2,8 @@
 
 ## teamber
 
--Dinh Phuong Thao
--Nguyen Duc Anh
+- Dinh Phuong Thao
+- Nguyen Duc Anh
 - Nguyen Thi Khanh Ly
 - Nguyen Khanh Toan
 
