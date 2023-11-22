@@ -4,6 +4,7 @@ import ttkbootstrap as ttk
 if __name__ == '__main__':
     #Tạo giao diện
     root = ttk.Window(themename="superhero")
+    print("Hello team")
     root.title('Flashcards')
     root.geometry('500x400')
 
