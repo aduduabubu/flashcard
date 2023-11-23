@@ -7,4 +7,17 @@ if __name__ == '__main__':
     root = ttk.Window(themename="superhero")
     root.title('Flashcards')
     root.geometry('500x400')
+
+    #Tạo biến chứa dữ liệu từ input
+    setName = ttk.StringVar()
+    word = ttk.StringVar()
+    definition = ttk.StringVar()
+
+    #Kiểm soát tabs
+    notebook = ttk.Notebook(root)
+    notebook.pack(fill='both', expand=True)
+
+    #tab tạo set
+    setFrame = ttk.Frame(notebook)
+    notebook.add(setFrame, text='Tạo Set')
 root.mainloop()
