@@ -41,4 +41,49 @@ if __name__ == '__main__':
     setsCombobox = ttk.Combobox(selectSetFrame, state='readonly')
     setsCombobox.pack(padx=5, pady=5)
 
+     #Các button cho phần select set
+    ttk.Button(selectSetFrame, text='Chọn Set', command=selectSet).pack(padx=5, pady=5)
+    ttk.Button(selectSetFrame, text='Xóa Set', command=delSet).pack(padx=5, pady=5)
+
+    #tab học cards
+    learnFrame = ttk.Frame(notebook)
+    notebook.add(learnFrame, text='Học Card')
+
+    #Lables, buttons của flashcards
+    wordLable = ttk.Label(learnFrame, text='', font=('TKDefaultFont', 24))
+    wordLable.pack(padx=5, pady=40)
+    definitionLable = ttk.Label(learnFrame, text='')
+    definitionLable.pack(padx=5, pady=5)
+    ttk.Button(learnFrame, bootstyle="danger", text='<1 phút\nHọc Lại', command=handleRelearn).pack(side='left', padx=5, pady=5)
+    ttk.Button(learnFrame, bootstyle="warning", text='<6 phút\nKhó', command=handleHard).pack(side='left', padx=5, pady=5)
+    ttk.Button(learnFrame, bootstyle="info", text='<10 phút\nTốt', command=handleGood).pack(side='left', padx=5, pady=5)
+    ttk.Button(learnFrame, bootstyle="success", text='<4 ngày\nDễ', command=handleEasy).pack(side='left', padx=5, pady=5)
+    ttk.Button(learnFrame, text='Lật Card', command=flipCard).pack(side='right', padx=5, pady=5)
+                                                      
+    #Tab tiến độ
+    meterProcessor = ttk.Meter(
+        notebook, 
+        metersize=180,
+        padding=30,
+        textright="%",
+        metertype="semi",
+        subtext="process",
+    )
+    notebook.add(meterProcessor, text='Tiến Độ')
+
+    #Lables, buttons của Tiến Độ
+    processLable = ttk.Label(meterProcessor, text='', font=('TKDefaultFont', 24))
+    processLable.pack(padx=10, pady=5)
+
+    #Tab nhập xuất
+    fileHandleFrame = ttk.Frame(notebook)
+    notebook.add(fileHandleFrame, text="Nhập xuất")
+
+    #Lables, buttons
+    ttk.Button(fileHandleFrame, text='Import', command=handleImportFile).pack(padx=5, pady=5)
+    ttk.Button(fileHandleFrame, text='Export', command=handleExportFile).pack(padx=5, pady=5)
+
+    getSets()
+    selectSet()
+
 root.mainloop()
